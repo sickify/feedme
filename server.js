@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 
-app.get('/', function(req, res) {
-  res.send('feed me');
+app.use(express.static('public'));
+
+app.get('/data', function(req, res) {
+  res.send('data from the server');
 });
 
 app.listen(1983);
