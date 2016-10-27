@@ -16,7 +16,7 @@ var T = new Twit({
 
 app.use(express.static('public'));
 
-app.get('/data', function(req, res) {
+app.get('/twit', function(req, res) {
   res.send('data from the server');
 });
 
