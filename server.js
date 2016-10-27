@@ -17,7 +17,11 @@ var T = new Twit({
 app.use(express.static('public'));
 
 app.get('/twit', function(req, res) {
+  // T.get
   res.send('data from the server');
 });
 
+app.get('/dummy', function(req, res) {
+  // res.send(data)
+})
 app.listen(1983);
