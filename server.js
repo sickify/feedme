@@ -7,12 +7,12 @@ var Twit = require('twit');
 
 var app = express();
 
-var T = new Twit({
-  consumer_key:       CKEY,
-  consumer_secret:    CSECRET,
-  access_token:       ATOKEN,
-  access_token_secret:ASECRET
-})
+// var T = new Twit({
+//   consumer_key:       CKEY,
+//   consumer_secret:    CSECRET,
+//   access_token:       ATOKEN,
+//   access_token_secret:ASECRET
+// })
 
 app.use(express.static('public'));
 
@@ -21,7 +21,17 @@ app.get('/twit', function(req, res) {
   res.send('data from the server');
 });
 
-app.get('/dummy', function(req, res) {
-  // res.send(data)
+app.get('/staged', function(req, res) {
+  var parsedData = [
+    {
+      username: 'zak',
+      message: 'Do you want to go get coffee at Blue Bottle?'
+    },
+    {
+      username: 'battenfield',
+      message: 'Yes, but I"ll get kombucha instead.'
+    }
+  ]
+  res.send(parsedData)
 })
 app.listen(1983);
