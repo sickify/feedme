@@ -26,7 +26,8 @@
         url: "/staged",
         success: function(data) {
           console.log(data);
-          $('#dataDiv').html(data);
+          $('#dataDiv').text(
+            data[0].message);
         }
       })
     })
