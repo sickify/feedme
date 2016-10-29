@@ -6,13 +6,24 @@
   <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 </head>
 <body>
-  <button id="pressMe">Data Me</button>
+  <!-- <button id="tweets">Tweets</button> -->
+  <button id="staged">Basic Data</button>
   <div id="dataDiv"></div>
   <script>
-    $('#pressMe').click(function(ev) {
+    $('#tweets').click(function(ev) {
       $.ajax({
         type: "GET",
         url: "/twit",
+        success: function(data) {
+          console.log(data);
+          $('#dataDiv').html(data);
+        }
+      })
+    })
+    $('#staged').click(function(ev) {
+      $.ajax({
+        type: "GET",
+        url: "/staged",
         success: function(data) {
           console.log(data);
           $('#dataDiv').html(data);
