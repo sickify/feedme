@@ -1,7 +1,7 @@
 var CKEY = process.env.TWITTER_KEY;
 var CSECRET = process.env.TWITTER_SECRET;
 var ATOKEN = process.env.TWITTER_ACCESS_TOKEN;
-var ASECRET = process.env.TWITTER_ACCESS_SECRET
+var ASECRET = process.env.TWITTER_ACCESS_SECRET;
 var express = require('express');
 var Twit = require('twit');
 
@@ -31,7 +31,7 @@ app.get('/staged', function(req, res) {
       username: 'battenfield',
       message: 'Yes, but I"ll get kombucha instead.'
     }
-  ]
-  res.send(parsedData)
-})
+  ];
+  res.send(parsedData);
+});
 app.listen(1983);
