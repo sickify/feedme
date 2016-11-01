@@ -27,10 +27,8 @@
         success: function(data) {
           console.log(data);
           data.forEach(function(text) {
-            $('#dataDiv').append(text.message);
-          })
-          // $('#dataDiv').text(
-          //   data[0].message);
+            $('#dataDiv').append('<p>' + text.username + " | " + text.message + '</p>');
+          });
         }
       })
     })
