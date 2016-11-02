@@ -4,7 +4,7 @@ var ATOKEN = process.env.TWITTER_ACCESS_TOKEN;
 var ASECRET = process.env.TWITTER_ACCESS_SECRET;
 var express = require('express');
 var Twit = require('twit');
-
+var dataSet = require('./stagedData.js');
 var app = express();
 
 // var T = new Twit({
@@ -32,6 +32,7 @@ app.get('/staged', function(req, res) {
       message: 'Yes, but I"ll get kombucha instead.'
     }
   ];
+  console.log(dataSet);
   res.send(parsedData);
 });
 app.listen(1983);
