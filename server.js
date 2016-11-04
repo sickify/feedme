@@ -22,22 +22,12 @@ app.use(express.static('public'));
 // });
 
 app.get('/staged', function(req, res) {
-  var parsedData = [
-    {
-      username: 'zak',
-      message: 'Do you want to go get coffee at Blue Bottle?'
-    },
-    {
-      username: 'battenfield',
-      message: 'Yes, but I"ll get kombucha instead.'
-    }
-  ];
   var tweets = dataSet.statuses;
-  var messages = tweets.forEach(function(val) {
-    console.log(val.text);
+  var messages = tweets.map(function(val) {
+    return val.text;
   });
   console.log(messages);
   // console.log(dataSet);
-  res.send(parsedData);
+  res.send(messages);
 });
 app.listen(1983);
