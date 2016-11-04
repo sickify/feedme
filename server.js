@@ -33,7 +33,10 @@ app.get('/staged', function(req, res) {
     }
   ];
   var tweets = dataSet.statuses;
-  console.log(tweets);
+  var messages = tweets.forEach(function(val) {
+    console.log(val.text);
+  });
+  console.log(messages);
   // console.log(dataSet);
   res.send(parsedData);
 });
