@@ -16,10 +16,10 @@ var app = express();
 
 app.use(express.static('public'));
 
-app.get('/twit', function(req, res) {
-  // T.get
-  res.send('data from the server');
-});
+// app.get('/twit', function(req, res) {
+//   // T.get
+//   res.send('data from the server');
+// });
 
 app.get('/staged', function(req, res) {
   var parsedData = [
@@ -32,7 +32,9 @@ app.get('/staged', function(req, res) {
       message: 'Yes, but I"ll get kombucha instead.'
     }
   ];
-  console.log(dataSet);
+  var tweets = dataSet.statuses;
+  console.log(tweets);
+  // console.log(dataSet);
   res.send(parsedData);
 });
 app.listen(1983);
