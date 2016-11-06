@@ -24,7 +24,10 @@ app.use(express.static('public'));
 app.get('/staged', function(req, res) {
   var tweets = dataSet.statuses;
   var messages = tweets.map(function(val) {
-    return val.text;
+    return {
+      text: val.text,
+      screen_name: val.user.screen_name
+    };
   });
   console.log(messages);
   // console.log(dataSet);

@@ -27,7 +27,7 @@
         success: function(data) {
           console.log(data);
           data.forEach(function(text) {
-            $('#dataDiv').append('<p>' + text.text + '</p>');
+            $('#dataDiv').append('<p>' + text.screen_name + ' | ' + text.text + '</p>');
           });
         }
       })
