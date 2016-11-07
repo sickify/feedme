@@ -26,11 +26,12 @@ app.get('/staged', function(req, res) {
   var messages = tweets.map(function(val) {
     return {
       text: val.text,
-      screen_name: val.user.screen_name
+      user: {
+      name: val.user.name,
+      screen_name: val.user.screen_name,
+      }
     };
   });
-  console.log(messages);
-  // console.log(dataSet);
   res.send(messages);
 });
 app.listen(1983);
