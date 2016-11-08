@@ -26,9 +26,10 @@ app.get('/staged', function(req, res) {
   var messages = tweets.map(function(val) {
     return {
       text: val.text,
+      created_at: val.user.created_at,
       user: {
       name: val.user.name,
-      screen_name: val.user.screen_name,
+      screen_name: val.user.screen_name
       }
     };
   });

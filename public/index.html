@@ -27,7 +27,7 @@
         success: function(data) {
           console.log(data);
           data.forEach(function(tweet) {
-            $('#dataDiv').append('<p>' + tweet.user.screen_name + ' | ' + tweet.text + '</p>');
+            $('#dataDiv').append('<p>' + tweet.user.screen_name + ' | ' + tweet.text + '   ' + tweet.created_at + '</p>');
           });
         }
       })
