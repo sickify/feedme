@@ -29,7 +29,8 @@ app.get('/staged', function(req, res) {
       created_at: val.created_at,
       user: {
       name: val.user.name,
-      screen_name: val.user.screen_name
+      screen_name: val.user.screen_name,
+      profile_image_url: val.user.profile_image_url
       }
     };
   });
